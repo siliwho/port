@@ -1,8 +1,8 @@
-import React from "react";
-import CalendarHeatmap from "react-calendar-heatmap";
-import "react-calendar-heatmap/dist/styles.css";
-import { Tooltip } from "react-tooltip";
-import "react-tooltip/dist/react-tooltip.css";
+import React from 'react';
+import CalendarHeatmap from 'react-calendar-heatmap';
+import 'react-calendar-heatmap/dist/styles.css';
+import { Tooltip } from 'react-tooltip';
+import 'react-tooltip/dist/react-tooltip.css';
 
 interface HeatmapProps {
   data: { date: string; count: number }[];
@@ -24,18 +24,16 @@ export const Heatmap: React.FC<HeatmapProps> = ({ data, title }) => {
         values={data}
         showWeekdayLabels={true}
         classForValue={(value) => {
-          if (!value || value.count === 0) return "color-empty";
-          if (value.count > 10) return "color-scale-4";
-          if (value.count > 5) return "color-scale-3";
-          if (value.count > 2) return "color-scale-2";
-          return "color-scale-1";
+          if (!value || value.count === 0) return 'color-empty';
+          if (value.count > 10) return 'color-scale-4';
+          if (value.count > 5) return 'color-scale-3';
+          if (value.count > 2) return 'color-scale-2';
+          return 'color-scale-1';
         }}
         tooltipDataAttrs={(value: any) => {
           return {
-            "data-tooltip-id": "heatmap-tooltip",
-            "data-tooltip-content": value.date
-              ? `${value.date}: ${value.count} contributions`
-              : "No contributions",
+            'data-tooltip-id': 'heatmap-tooltip',
+            'data-tooltip-content': value.date ? `${value.date}: ${value.count} contributions` : 'No contributions',
           };
         }}
       />
@@ -53,7 +51,7 @@ export const Heatmap: React.FC<HeatmapProps> = ({ data, title }) => {
         }
 
         .react-calendar-heatmap text {
-          font-size: 3px;
+          font-size: 6px;
           fill: rgba(255, 255, 255, 0.3);
           font-family: 'JetBrains Mono', monospace;
         }
