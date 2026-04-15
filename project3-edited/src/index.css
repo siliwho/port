@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white overflow-hidden;
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom Heatmap Styles */
+.react-calendar-heatmap rect:hover {
+  stroke: #fff;
+  stroke-width: 1px;
+}
+
+.react-calendar-heatmap .color-empty { fill: rgba(255, 255, 255, 0.03); }
+.react-calendar-heatmap .color-scale-1 { fill: #0e4429; }
+.react-calendar-heatmap .color-scale-2 { fill: #006d32; }
+.react-calendar-heatmap .color-scale-3 { fill: #26a641; }
+.react-calendar-heatmap .color-scale-4 { fill: #39d353; }
+
+.react-calendar-heatmap rect {
+  rx: 1.5;
+  ry: 1.5;
+}
+
+.react-calendar-heatmap text {
+  font-size: 6px;
+  fill: rgba(255, 255, 255, 0.3);
+  font-family: 'JetBrains Mono', monospace;
+}
